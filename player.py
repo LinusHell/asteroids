@@ -52,4 +52,9 @@ class Player(CircleShape):
     def shoot(self):
         shot = Shot(self.position.x,self.position.y,SHOT_RADIUS)
         shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
+    
+    def death_animation(self):
+        for i in range(36):
+            shot = Shot(self.position.x,self.position.y,SHOT_RADIUS/2)
+            shot.velocity = pygame.Vector2(0, 1).rotate(i * 10) * PLAYER_SHOOT_SPEED
 
